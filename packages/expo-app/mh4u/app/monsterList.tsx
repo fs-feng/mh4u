@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Dimensions } from "react-native";
 import { Text, View } from "@/components/Themed";
 import CListItem from "@/components/CListItem";
 
-import { menuData } from "@/data/menuData";
+import { menuData } from "@/data/sectionData";
 
 export default function monsterListScreen() {
   return (

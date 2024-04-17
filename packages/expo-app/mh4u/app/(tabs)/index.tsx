@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, Dimensions } from "react-native";
 import { Text, View } from "@/components/Themed";
 import CListItem from "@/components/CListItem";
 
-import { menuData } from "@/data/menuData";
+import { sectionData } from "@/data/sectionData";
 import { Stack } from "expo-router";
 
 export default function TabOneScreen() {
@@ -15,7 +15,7 @@ export default function TabOneScreen() {
         }}
       />
       <FlatList
-        data={menuData}
+        data={sectionData}
         keyExtractor={(item) => item.title}
         initialNumToRender={10}
         windowSize={2}
