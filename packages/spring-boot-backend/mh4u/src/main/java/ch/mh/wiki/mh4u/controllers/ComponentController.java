@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class ComponentRepository {
+public class ComponentController {
     private final ComponentService service;
 
     @Autowired
-    public ComponentRepository(ComponentService service) {
+    public ComponentController(ComponentService service) {
         this.service = service;
     }
 
     @GetMapping("/allComponents")
-    public List<Component[]> getAllComponents() {
+    public List<List<Component>> getAllComponents() {
         return service.getAllComponents();
     }
 }

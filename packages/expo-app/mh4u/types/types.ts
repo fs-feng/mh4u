@@ -32,4 +32,14 @@ export type Item = {
   armor_dupe_name_fix: string;
 };
 
+export type Combining = {
+  id: number;
+  created_item: Item;
+  item1: Item;
+  item2: Item;
+  amount_made_min: number;
+  amount_made_max: number;
+  percentage: number;
+};
+
 export type Combination = {};
