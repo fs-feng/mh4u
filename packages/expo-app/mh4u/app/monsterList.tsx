@@ -3,13 +3,13 @@ import { FlatList, StyleSheet, Dimensions } from "react-native";
 import { Text, View } from "@/components/Themed";
 import CListItem from "@/components/CListItem";
 
-import { menuData } from "@/data/sectionData";
+import { sectionData } from "@/data/sectionData";
 
 export default function monsterListScreen() {
   return (
     <View style={styles.container}>
       <FlatList
-        data={menuData}
+        data={sectionData}
         keyExtractor={(item) => item.title}
         initialNumToRender={10}
         windowSize={2}

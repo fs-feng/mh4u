@@ -12,3 +12,24 @@ export type Monster = {
   icon_name: string;
   sort_name: string;
 };
+
+export type Item = {
+  id: number;
+  name: string;
+  name_de: string;
+  name_fr: string;
+  name_es: string;
+  name_it: string;
+  name_jp: string;
+  type: string;
+  sub_type: string;
+  rarity: number;
+  carry_capacity: number;
+  buy: number;
+  sell: number;
+  description: string;
+  icon_name: string;
+  armor_dupe_name_fix: string;
+};
+
+export type Combination = {};

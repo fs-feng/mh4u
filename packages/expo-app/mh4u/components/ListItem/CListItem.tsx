@@ -1,20 +1,30 @@
 import { FC } from "react";
-import { Monster } from "@/types/types";
+import { Monster, Item } from "@/types/types";
+import ItemMonster from "./ItemMonster";
+import ItemItem from "./ItemItem";
 
 type Props = {
-  data: any;
+  data: Monster | Item;
 };
+
+function isMonster(data: Monster | Item): data is Monster {
+  return true;
+}
+
+function isItem(data: Monster | Item): data is Item {
+  return true;
+}
 
 const CListItem: FC<Props> = ({ data }) => {
   let content;
 
-  switch (data.type) {
-    case "Monster":
-      content = "Monster";
-      break;
+  if (isMonster(data)) {
+    content = <ItemMonster data={data} />;
+  } else if (isItem(data)) {
+    content = <ItemItem data={data} />;
   }
 
-  return content;
+  return <>{content}</>;
 };
 
 export default CListItem;

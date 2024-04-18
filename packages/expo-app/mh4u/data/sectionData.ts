@@ -9,7 +9,7 @@ export const sectionData = [
     id: 2,
     title: "Monsters",
     icon: "/icons_monster/MH4U-Rathalos_Icon.png",
-    route: "/monsterList",
+    route: "/stack/monsters",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const sectionData = [
     id: 5,
     title: "Items",
     icon: "/icons_items/Herb-YellowGreen.png",
-    route: "",
+    route: "/stack/items",
   },
   {
     id: 6,

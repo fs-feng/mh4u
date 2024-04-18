@@ -4,13 +4,13 @@ import { Pressable, StyleSheet, Dimensions } from "react-native";
 import { ListItem, Image, Text } from "@rneui/themed";
 import { Href, Link } from "expo-router";
 
-import { Monster } from "@/types/types";
+import { Item } from "@/types/types";
 
 type Props = {
-  data: Monster;
+  data: Item;
 };
 
-const ItemMonster: FC<Props> = ({ data }) => {
+const ItemItem: FC<Props> = ({ data }) => {
   const { name, icon_name } = data;
   console.log(icon_name);
   return (
@@ -19,7 +19,7 @@ const ItemMonster: FC<Props> = ({ data }) => {
         <ListItem style={styles.container}>
           <Image
             source={{
-              uri: "http://10.0.2.2:8000/icons/icons_monster/" + icon_name,
+              uri: "http://10.0.2.2:8000/icons/icons_items/" + icon_name,
             }}
             style={styles.image}
           />
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ItemMonster;
+export default ItemItem;
