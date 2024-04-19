@@ -1,4 +1,5 @@
 export type Monster = {
+  unique: "Monster";
   id: number;
   monsterClass: string;
   name: string;
@@ -14,6 +15,7 @@ export type Monster = {
 };
 
 export type Item = {
+  unique: "Item";
   id: number;
   name: string;
   name_de: string;
@@ -33,6 +35,7 @@ export type Item = {
 };
 
 export type Combining = {
+  unique: "Combining";
   id: number;
   created_item: Item;
   item1: Item;
@@ -43,3 +46,26 @@ export type Combining = {
 };
 
 export type Combination = {};
+
+export type Location = {
+  unique: "Location";
+  id: number;
+  name: string;
+  name_de: string;
+  name_fr: string;
+  name_es: string;
+  name_it: string;
+  name_jp: string;
+  map: string;
+};
+
+export type SkillTree = {
+  unique: "SkillTree";
+  id: number;
+  name: string;
+  name_de: string;
+  name_fr: string;
+  name_es: string;
+  name_it: string;
+  name_jp: string;
+};

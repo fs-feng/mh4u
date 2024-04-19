@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet } from "react-native";
+import { useLocalSearchParams } from "expo-router";
 
-import { Text, View } from "@/components/Themed";
+import { View, Text } from "@/components/Themed";
 
+import { setDataList } from "./section";
 import CListItem from "@/components/ListItem/CListItem";
-import { Combining } from "@/types/types";
-import { fetchCombining } from "@/services/combiningService";
-import ItemCombining from "@/components/ListItem/ItemCombining";
 
-export default function Combinations() {
-  const [combining, setCombining] = useState<Combining[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchCombining();
-      setCombining(data);
-    };
-
-    fetchData();
-  }, []);
+export default function SectionScreen() {
+  const { section } = useLocalSearchParams();
+  const data = setDataList(section.toString());
 
   return (
     <View style={styles.container}>
+      <Text>{section}</Text>
       <FlatList
-        data={combining}
+        data={data}
         keyExtractor={(item) => item.id.toString()}
         initialNumToRender={20}
         windowSize={5}

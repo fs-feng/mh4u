@@ -4,25 +4,18 @@ import { Pressable, StyleSheet, Dimensions } from "react-native";
 import { ListItem, Image, Text } from "@rneui/themed";
 import { Href, Link } from "expo-router";
 
-import { Monster } from "@/types/types";
+import { SkillTree } from "@/types/types";
 
 type Props = {
-  data: Monster;
+  data: SkillTree;
 };
 
-const ItemMonster: FC<Props> = ({ data }) => {
-  const { name, icon_name } = data;
-  console.log(icon_name);
+const ItemSkillTree: FC<Props> = ({ data }) => {
+  const { name } = data;
   return (
     <Link href={"/two"} asChild>
       <Pressable>
         <ListItem style={styles.container}>
-          <Image
-            source={{
-              uri: "http://10.0.2.2:8000/icons/icons_monster/" + icon_name,
-            }}
-            style={styles.image}
-          />
           <Text style={styles.text}>{name}</Text>
         </ListItem>
       </Pressable>
@@ -57,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ItemMonster;
+export default ItemSkillTree;

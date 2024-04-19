@@ -9,7 +9,7 @@ export const sectionData = [
     id: 2,
     title: "Monsters",
     icon: "/icons_monster/MH4U-Rathalos_Icon.png",
-    route: "/stack/monsters",
+    route: "/stack/sectionScreen/Monsters",
   },
   {
     id: 3,
@@ -27,19 +27,19 @@ export const sectionData = [
     id: 5,
     title: "Items",
     icon: "/icons_items/Herb-YellowGreen.png",
-    route: "/stack/items",
+    route: "/stack/sectionScreen/Items",
   },
   {
     id: 6,
     title: "Combinations",
     icon: "/icons_items/Liquid-Purple.png",
-    route: "",
+    route: "/stack/sectionScreen/Combinations",
   },
   {
     id: 7,
     title: "Locations",
     icon: "/icons_items/Map-Icon-White.png",
-    route: "",
+    route: "/stack/sectionScreen/Locations",
   },
   {
     id: 8,
@@ -51,7 +51,7 @@ export const sectionData = [
     id: 9,
     title: "Skills",
     icon: "/icons_items/Bomb-Cyan.png",
-    route: "",
+    route: "/stack/sectionScreen/SkillTrees",
   },
   {
     id: 10,

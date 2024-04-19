@@ -8,6 +8,7 @@ export const fetchItems = async (): Promise<Item[]> => {
     const response = await axios.get(API_URL + "/allItems"); // Adjust the endpoint as needed
     const data: Item[] = response.data.map((item: any) => {
       return {
+        unique: "Item",
         id: item.id,
         name: item.name,
         name_de: item.nameDe,

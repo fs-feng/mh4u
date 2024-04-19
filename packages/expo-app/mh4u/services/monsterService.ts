@@ -8,6 +8,7 @@ export const fetchMonsters = async () => {
     const response = await axios.get(API_URL + "/allMonsters");
     const data: Monster[] = response.data.map((monster: any) => {
       return {
+        unique: "Monster",
         id: monster.id, // _id in db
         monsterClass: monster.monsterClass, // class in db
         name: monster.name,

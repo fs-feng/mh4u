@@ -28,7 +28,7 @@ export default function Items() {
         keyExtractor={(item) => item.id.toString()}
         initialNumToRender={20}
         windowSize={5}
-        renderItem={({ item }) => <ItemItem data={item} />}
+        renderItem={({ item }) => <CListItem data={item} />}
       />
       <View
         style={styles.separator}
