@@ -1,9 +1,10 @@
 import { FlatList, StyleSheet, Dimensions } from "react-native";
 
-import { Text, View } from "@/components/Themed";
-import CListItem from "@/components/CListItem";
+import { Text, View } from "@/components/misc/Themed";
 
+import SectionItem from "@/components/NavItems/NavItem";
 import { sectionData } from "@/data/sectionData";
+
 import { Stack } from "expo-router";
 
 export default function TabOneScreen() {
@@ -20,7 +21,7 @@ export default function TabOneScreen() {
         initialNumToRender={10}
         windowSize={2}
         renderItem={({ item }) => (
-          <CListItem title={item.title} icon={item.icon} route={item.route} />
+          <SectionItem title={item.title} icon={item.icon} route={item.route} />
         )}
       />
 

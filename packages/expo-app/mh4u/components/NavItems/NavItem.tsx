@@ -1,16 +1,16 @@
-import React from "react";
-import { Dimensions, Pressable } from "react-native";
-import { View, StyleSheet } from "react-native";
+import { FC } from "react";
+
+import { Pressable, StyleSheet, Dimensions } from "react-native";
 import { ListItem, Image, Text } from "@rneui/themed";
 import { Href, Link } from "expo-router";
 
-interface CListItemProps {
+type Props = {
   title: string;
   icon: string;
   route: string;
-}
+};
 
-const CListItem: React.FC<CListItemProps> = ({ title, icon, route }) => {
+const SectionItem: FC<Props> = ({ title, icon, route }) => {
   return (
     <Link href={route as Href<string>} asChild>
       <Pressable>
@@ -30,8 +30,9 @@ const CListItem: React.FC<CListItemProps> = ({ title, icon, route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 0,
     width: Dimensions.get("window").width,
+    borderBottomColor: "rgba(0, 0, 0, 0.1)",
+    borderBottomWidth: 0.5,
   },
   image: {
     width: Dimensions.get("window").height * 0.05,
@@ -40,14 +41,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: Dimensions.get("window").height * 0.025,
   },
-
-  item: {
-    borderColor: "black",
-    borderTopWidth: 0.2,
-
-    padding: 20,
-    fontSize: 15,
-  },
 });
 
-export default CListItem;
+export default SectionItem;

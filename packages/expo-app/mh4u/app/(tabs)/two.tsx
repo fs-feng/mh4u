@@ -1,9 +1,9 @@
 import { FlatList, StyleSheet } from "react-native";
 
-import EditScreenInfo from "@/components/EditScreenInfo";
-import { Text, View } from "@/components/Themed";
+import EditScreenInfo from "@/components/misc/EditScreenInfo";
+import { Text, View } from "@/components/misc/Themed";
 
-import SectionItem from "@/components/ListItem/SectionItem";
+import SectionItem from "@/components/NavItems/NavItem";
 import { sectionData } from "@/data/sectionData";
 
 export default function TabTwoScreen() {

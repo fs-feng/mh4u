@@ -1,0 +1,86 @@
+export const weaponsData = [
+  {
+    id: 1,
+    title: "Great Sword",
+    icon: "/icons_weapons/icons_great_sword/great_sword8.png",
+    route: "/two",
+  },
+  {
+    id: 2,
+    title: "Long Sword",
+    icon: "/icons_weapons/icons_long_sword/long_sword2.png",
+    route: "/two",
+  },
+  {
+    id: 3,
+    title: "Sword and Shield",
+    icon: "/icons_weapons/icons_sword_and_shield/sword_and_shield3.png",
+    route: "/two",
+  },
+  {
+    id: 4,
+    title: "Dual Blades",
+    icon: "/icons_weapons/icons_dual_blades/dual_blades4.png",
+    route: "/two",
+  },
+  {
+    id: 5,
+    title: "Hammer",
+    icon: "/icons_weapons/icons_hammer/hammer5.png",
+    route: "/two",
+  },
+  {
+    id: 6,
+    title: "Hunting Horn",
+    icon: "/icons_weapons/icons_hunting_horn/hunting_horn6.png",
+    route: "/two",
+  },
+  {
+    id: 7,
+    title: "Lance",
+    icon: "/icons_weapons/icons_lance/lance7.png",
+    route: "/two",
+  },
+  {
+    id: 8,
+    title: "Gunlance",
+    icon: "/icons_weapons/icons_gunlance/gunlance8.png",
+    route: "/two",
+  },
+  {
+    id: 9,
+    title: "Switch Axe",
+    icon: "/icons_weapons/icons_switch_axe/switch_axe9.png",
+    route: "/two",
+  },
+  {
+    id: 10,
+    title: "Charge Blade",
+    icon: "/icons_weapons/icons_charge_blade/charge_blade10.png",
+    route: "/two",
+  },
+  {
+    id: 11,
+    title: "Insect Glaive",
+    icon: "/icons_weapons/icons_insect_glaive/insect_glaive2.png",
+    route: "/two",
+  },
+  {
+    id: 12,
+    title: "Light Bowgun",
+    icon: "/icons_weapons/icons_light_bowgun/light_bowgun3.png",
+    route: "/two",
+  },
+  {
+    id: 13,
+    title: "Heavy Bowgun",
+    icon: "/icons_weapons/icons_heavy_bowgun/heavy_bowgun4.png",
+    route: "/two",
+  },
+  {
+    id: 14,
+    title: "Bow",
+    icon: "/icons_weapons/icons_bow/bow5.png",
+    route: "/two",
+  },
+];

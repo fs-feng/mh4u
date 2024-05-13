@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-public class ItemToSkillTreeRepository {
+public class ItemToSkillTreeController {
     private final ItemToSkillTreeService service;
 
     @Autowired
-    public ItemToSkillTreeRepository(ItemToSkillTreeService service) {
+    public ItemToSkillTreeController(ItemToSkillTreeService service) {
         this.service = service;
     }
 
     @GetMapping("/itemToSkillTree/{itemId}")
-    public ItemToSkillTree getItemToSkillTree(@PathVariable int itemId) {
+    public List<ItemToSkillTree> getItemToSkillTree(@PathVariable int itemId) {
         return service.getItemToSkillTree(itemId);
     }
 }

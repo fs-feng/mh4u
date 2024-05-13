@@ -1,10 +1,10 @@
 import { FlatList, StyleSheet } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 
-import { View, Text } from "@/components/Themed";
+import { View, Text } from "@/components/misc/Themed";
 
 import { setDataList } from "./section";
-import CListItem from "@/components/ListItem/CListItem";
+import CListItem from "@/components/ListItem/ListItem";
 
 export default function SectionScreen() {
   const { section } = useLocalSearchParams();

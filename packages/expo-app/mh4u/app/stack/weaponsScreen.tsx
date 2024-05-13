@@ -1,20 +1,27 @@
-import { FlatList, StyleSheet, Dimensions } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
-import { Text, View } from "@/components/Themed";
-import CListItem from "@/components/CListItem";
+import { View } from "@/components/misc/Themed";
 
-import { sectionData } from "@/data/sectionData";
+import SectionItem from "@/components/NavItems/NavItem";
+import { weaponsData } from "@/data/weaponsData";
 
-export default function monsterListScreen() {
+import { Stack } from "expo-router";
+
+export default function WeaponsScreen() {
   return (
     <View style={styles.container}>
+      <Stack.Screen
+        options={{
+          title: "Home",
+        }}
+      />
       <FlatList
-        data={sectionData}
+        data={weaponsData}
         keyExtractor={(item) => item.title}
         initialNumToRender={10}
         windowSize={2}
         renderItem={({ item }) => (
-          <CListItem title={item.title} icon={item.icon} route={item.route} />
+          <SectionItem title={item.title} icon={item.icon} route={item.route} />
         )}
       />
 

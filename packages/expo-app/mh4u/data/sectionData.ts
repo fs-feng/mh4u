@@ -15,7 +15,7 @@ export const sectionData = [
     id: 3,
     title: "Weapons",
     icon: "/icons_weapons/icons_sword_and_shield/sword_and_shield9.png",
-    route: "",
+    route: "/stack/weaponsScreen",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const sectionData = [
     id: 8,
     title: "Decorations",
     icon: "/icons_items/Jewel-Cyan.png",
-    route: "",
+    route: "/stack/sectionScreen/Decorations",
   },
   {
     id: 9,

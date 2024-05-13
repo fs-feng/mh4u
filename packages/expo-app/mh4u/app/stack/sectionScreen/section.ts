@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
 
-import { Monster, Item, Combining, Location, SkillTree } from "@/types/types";
+import {
+  Monster,
+  Item,
+  Combining,
+  Location,
+  SkillTree,
+  Decoration,
+} from "@/types/types";
 import { fetchItems } from "@/services/itemService";
 import { fetchMonsters } from "@/services/monsterService";
 import { fetchCombining } from "@/services/combiningService";
 import { fetchLocations } from "@/services/locationService";
 import { fetchSkillTrees } from "@/services/skillTreeService";
+import { fetchDecorations } from "@/services/decorationService";
 
-export function setDataList(
-  section: string
-): (Monster | Item | Combining | Location | SkillTree)[] {
+export function setDataList(section: string): any {
   switch (section) {
     case "Monsters":
       return monsterList();
@@ -26,9 +32,27 @@ export function setDataList(
     case "SkillTrees":
       return skillTreeList();
       break;
+    case "Decorations":
+      return decorationList();
+      break;
     default:
       return [];
   }
+}
+
+function decorationList(): Decoration[] {
+  const [decorations, setDecorations] = useState<Decoration[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchDecorations();
+      setDecorations(data);
+    };
+
+    fetchData();
+  }, []);
+
+  return decorations;
 }
 
 function skillTreeList(): SkillTree[] {

@@ -69,3 +69,18 @@ export type SkillTree = {
   name_it: string;
   name_jp: string;
 };
+
+export type Decoration = {
+  unique: "Decoration";
+  id: number;
+  num_slots: number;
+  item: Item;
+};
+
+export type ItemToSkillTree = {
+  unique: "ItemToSkillTree";
+  id: number;
+  item: Item;
+  skill_tree: SkillTree;
+  point_value: number;
+};
