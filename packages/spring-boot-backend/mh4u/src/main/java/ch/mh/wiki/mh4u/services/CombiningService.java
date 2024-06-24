@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CombiningService {
@@ -18,5 +19,9 @@ public class CombiningService {
 
     public List<Combining> getAllCombining() {
         return repository.findAll();
+    }
+
+    public Optional<List<Combining>> getAllMatchingId(int id) {
+        return repository.findByAnyItemId(id);
     }
 }

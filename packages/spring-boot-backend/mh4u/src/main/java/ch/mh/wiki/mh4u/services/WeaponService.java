@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WeaponService {
@@ -17,10 +18,14 @@ public class WeaponService {
     }
 
     public List<Weapon> getWeaponsByType(String wtype) {
-        return  repository.findWeaponByWtype(wtype);
+        return  repository.findByWtype(wtype);
     }
 
     public List<Weapon> allWeapons() {
         return repository.findAll();
+    }
+
+    public Optional<Weapon> getWeaponById(int id) {
+        return repository.findById(id);
     }
 }

@@ -6,7 +6,6 @@ import ch.mh.wiki.mh4u.repositories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,5 +22,9 @@ public class DecorationService {
 
     public List<Decoration> getAllDecorations() {
         return decorationRepository.findAll();
+    }
+
+    public Optional<Decoration> getDecorationById(int id) {
+        return decorationRepository.findById(id);
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ComponentService {
@@ -46,5 +47,9 @@ public class ComponentService {
 
         }
         return componentList;
+    }
+
+    public Optional<List<Component>> getComponentsByItemId(int id) {
+        return repository.findByCreatedItemId(id);
     }
 }

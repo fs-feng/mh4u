@@ -11,49 +11,49 @@ public class Weapon {
     private int id;
 
     @Column(name = "parent_id")
-    private int parentId;
+    private Integer parentId;
 
     @Column(name = "wtype")
     private String wtype;
 
     @Column(name = "creation_cost")
-    private int creationCost;
+    private Integer creationCost;
 
     @Column(name = "upgrade_cost")
-    private int upgradeCost;
+    private Integer upgradeCost;
 
     @Column(name = "attack")
-    private int attack;
+    private Integer attack;
 
     @Column(name = "max_attack")
-    private int maxAttack;
+    private Integer maxAttack;
 
     @Column(name = "element")
     private String element;
 
     @Column(name = "element_attack")
-    private int elementAttack;
+    private Integer elementAttack;
 
     @Column(name = "element_2")
     private String element2;
 
     @Column(name = "element_2_attack")
-    private int element2Attack;
+    private Integer element2Attack;
 
     @Column(name = "awaken")
     private String awaken;
 
     @Column(name = "awaken_attack")
-    private int awakenAttack;
+    private Integer awakenAttack;
 
     @Column(name = "defense")
-    private int defense;
+    private Integer defense;
 
     @Column(name = "sharpness")
     private String sharpness;
 
     @Column(name = "affinity")
-    private int affinity;
+    private String affinity;
 
     @Column(name = "horn_notes")
     private String hornNotes;
@@ -89,15 +89,19 @@ public class Weapon {
     private String specialAmmo;
 
     @Column(name = "num_slots")
-    private int numSlots;
+    private Integer numSlots;
 
     @Column(name = "tree_depth")
-    private int treeDepth;
+    private Integer treeDepth;
 
     @Column(name = "final")
-    private Boolean isFinal;
+    private Integer isFinal;
 
-    public Weapon(int parentId, String wtype, int creationCost, int upgradeCost, int attack, int maxAttack, String element, int elementAttack, String element2, int element2Attack, String awaken, int awakenAttack, int defense, String sharpness, int affinity, String hornNotes, String shellingType, String phial, String charges, String coatings, String recoil, String reloadSpeed, String rapidFire, String deviation, String ammo, String specialAmmo, int numSlots, int treeDepth, Boolean isFinal) {
+    @OneToOne
+    @JoinColumn(name = "_id", referencedColumnName = "_id")
+    private Item item;
+
+    public Weapon(Integer parentId, String wtype, Integer creationCost, Integer upgradeCost, Integer attack, Integer maxAttack, String element, Integer elementAttack, String element2, Integer element2Attack, String awaken, Integer awakenAttack, Integer defense, String sharpness, String affinity, String hornNotes, String shellingType, String phial, String charges, String coatings, String recoil, String reloadSpeed, String rapidFire, String deviation, String ammo, String specialAmmo, Integer numSlots, Integer treeDepth, Integer isFinal) {
         this.parentId = parentId;
         this.wtype = wtype;
         this.creationCost = creationCost;
@@ -133,6 +137,7 @@ public class Weapon {
 
     }
 
+
     public int getId() {
         return id;
     }
@@ -141,11 +146,11 @@ public class Weapon {
         this.id = id;
     }
 
-    public int getParentId() {
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(int parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 
@@ -157,35 +162,35 @@ public class Weapon {
         this.wtype = wtype;
     }
 
-    public int getCreationCost() {
+    public Integer getCreationCost() {
         return creationCost;
     }
 
-    public void setCreationCost(int creationCost) {
+    public void setCreationCost(Integer creationCost) {
         this.creationCost = creationCost;
     }
 
-    public int getUpgradeCost() {
+    public Integer getUpgradeCost() {
         return upgradeCost;
     }
 
-    public void setUpgradeCost(int upgradeCost) {
+    public void setUpgradeCost(Integer upgradeCost) {
         this.upgradeCost = upgradeCost;
     }
 
-    public int getAttack() {
+    public Integer getAttack() {
         return attack;
     }
 
-    public void setAttack(int attack) {
+    public void setAttack(Integer attack) {
         this.attack = attack;
     }
 
-    public int getMaxAttack() {
+    public Integer getMaxAttack() {
         return maxAttack;
     }
 
-    public void setMaxAttack(int maxAttack) {
+    public void setMaxAttack(Integer maxAttack) {
         this.maxAttack = maxAttack;
     }
 
@@ -197,11 +202,11 @@ public class Weapon {
         this.element = element;
     }
 
-    public int getElementAttack() {
+    public Integer getElementAttack() {
         return elementAttack;
     }
 
-    public void setElementAttack(int elementAttack) {
+    public void setElementAttack(Integer elementAttack) {
         this.elementAttack = elementAttack;
     }
 
@@ -213,11 +218,11 @@ public class Weapon {
         this.element2 = element2;
     }
 
-    public int getElement2Attack() {
+    public Integer getElement2Attack() {
         return element2Attack;
     }
 
-    public void setElement2Attack(int element2Attack) {
+    public void setElement2Attack(Integer element2Attack) {
         this.element2Attack = element2Attack;
     }
 
@@ -229,19 +234,19 @@ public class Weapon {
         this.awaken = awaken;
     }
 
-    public int getAwakenAttack() {
+    public Integer getAwakenAttack() {
         return awakenAttack;
     }
 
-    public void setAwakenAttack(int awakenAttack) {
+    public void setAwakenAttack(Integer awakenAttack) {
         this.awakenAttack = awakenAttack;
     }
 
-    public int getDefense() {
+    public Integer getDefense() {
         return defense;
     }
 
-    public void setDefense(int defense) {
+    public void setDefense(Integer defense) {
         this.defense = defense;
     }
 
@@ -253,11 +258,11 @@ public class Weapon {
         this.sharpness = sharpness;
     }
 
-    public int getAffinity() {
+    public String getAffinity() {
         return affinity;
     }
 
-    public void setAffinity(int affinity) {
+    public void setAffinity(String affinity) {
         this.affinity = affinity;
     }
 
@@ -349,27 +354,35 @@ public class Weapon {
         this.specialAmmo = specialAmmo;
     }
 
-    public int getNumSlots() {
+    public Integer getNumSlots() {
         return numSlots;
     }
 
-    public void setNumSlots(int numSlots) {
+    public void setNumSlots(Integer numSlots) {
         this.numSlots = numSlots;
     }
 
-    public int getTreeDepth() {
+    public Integer getTreeDepth() {
         return treeDepth;
     }
 
-    public void setTreeDepth(int treeDepth) {
+    public void setTreeDepth(Integer treeDepth) {
         this.treeDepth = treeDepth;
     }
 
-    public Boolean getFinal() {
+    public Integer getIsFinal() {
         return isFinal;
     }
 
-    public void setFinal(Boolean aFinal) {
-        isFinal = aFinal;
+    public void setIsFinal(Integer isFinal) {
+        this.isFinal = isFinal;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }
