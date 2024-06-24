@@ -1,50 +1,24 @@
-import { FlatList, StyleSheet, Dimensions } from "react-native";
+import {View, Text, Pressable} from "react-native";
+import { SafeAreaProvider} from "react-native-safe-area-context";
+import {Link} from "expo-router";
+import {Card, Icon} from "@rneui/themed";
+import {Button} from "@rneui/base";
 
-import { Text, View } from "@/components/misc/Themed";
-
-import SectionItem from "@/components/NavItems/NavItem";
-import { sectionData } from "@/data/sectionData";
-
-import { Stack } from "expo-router";
-
-export default function TabOneScreen() {
-  return (
-    <View style={styles.container}>
-      <Stack.Screen
-        options={{
-          title: "Home",
-        }}
-      />
-      <FlatList
-        data={sectionData}
-        keyExtractor={(item) => item.title}
-        initialNumToRender={10}
-        windowSize={2}
-        renderItem={({ item }) => (
-          <SectionItem title={item.title} icon={item.icon} route={item.route} />
-        )}
-      />
-
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-    </View>
-  );
+const HomePage = () => {
+    return (
+        <SafeAreaProvider>
+            <View>
+                <Card>
+                    <Card.Title>Monster Hunter 4 Ultimate</Card.Title>
+                    <Card.Divider/>
+                    <Card.Image
+                        style={{ padding: 0 }}
+                        source={{ uri: "http://10.0.2.2:8000/icons/mh4u.png" }}
+                    />
+                </Card>
+            </View>
+        </SafeAreaProvider>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "100%",
-  },
-});
+export default HomePage;
